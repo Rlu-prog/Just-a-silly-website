@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boogle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .logo {
+            font-size: 100px;
+            font-weight: bold;
+            color: #4285F4;
+        }
+        .logo .green {
+            color: #34A853;
+        }
+        .logo .yellow {
+            color: #FBBC05;
+        }
+        .logo .red {
+            color: #EA4335;
+        }
+        .search-box {
+            margin-top: 40px;
+        }
+        .search-box input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .search-box button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-box button:hover {
+            background-color: #357ae8;
+        }
+        .footer {
+            margin-top: 100px;
+            font-size: 12px;
+            color: #777;
+        }
+        #animation {
+            display: none;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #4285F4;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <span class="red">B</span><span class="green">o</span><span class="yellow">o</span><span class="blue">g</span><span class="red">l</span><span class="green">e</span>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for a game...">
+        <button onclick="search()">Boogle Search</button>
+    </div>
+    <div id="animation">Opening portal...</div>
+    <div class="footer">
+        Ryan Lu, this is a silly game website made with the collaboration of ChatGPT-4.
+    </div>
+
+    <script>
+        function search() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                document.querySelector('.search-box').style.display = 'none';
+                document.getElementById('animation').style.display = 'block';
+                setTimeout(() => {
+                    window.location.href = `https://poki.com`;
+                }, 3000); // 3 seconds delay for animation
+            } else {
+                alert("Please enter a search term!");
+            }
+        }
+    </script>
+</body>
+</html>
